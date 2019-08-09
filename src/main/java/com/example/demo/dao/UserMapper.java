@@ -1,17 +1,26 @@
 package com.example.demo.dao;
 
-import org.springframework.stereotype.Repository;
+import com.example.demo.entity.User;
+import org.apache.ibatis.annotations.Param;
 
-@Repository
+
+import java.util.List;
+
 public interface UserMapper {
-    // 1. 实现查询所有用户
 
-    // 2. 根据用户id查询用户
+    List<User> findAll();
 
-    // 3. 添加新用户
+    int deleteByPrimaryKey(Integer id);
 
-    // 4. 根据用户id删除用户
+    int insert(User record);
 
-    // 5. 根据用户id更新用户
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(@Param("user") User user, @Param("userId") int userId);
+
 
 }

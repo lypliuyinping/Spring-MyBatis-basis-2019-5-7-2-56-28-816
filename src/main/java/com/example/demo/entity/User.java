@@ -1,26 +1,23 @@
 package com.example.demo.entity;
 
 public class User {
-    private long id;
+    private Integer id;
+
     private String name;
 
-
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
-
 
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
-
 }
-
